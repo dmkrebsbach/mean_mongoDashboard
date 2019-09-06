@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html style="margin:20px;">
+<head>
+	<title>All About <%= bear.name %></title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+	<img src="/<%= bear.id %>.jpg"><br>
+	<h4>Name: <%= bear.name %></h4>
+	<h4>Breed: <%= bear.breed %></h4>
+	<h4>Color: <%= bear.color %></h4>
+	<h4>Personality: <%= bear.personality %></h4>
+	<h4>Age: <%= bear.age %></h4>
+	<h4>Favorite Food: <%= bear.food %></h4>
+	<h4>Size: <%= bear.size %></h4>
+	
+	<form action="/bears/delete/<%= bear.id %>" method="post" style='display: inline-block;'>
+		<button style="margin-top: 30px;" class="btn btn-default">Delete Bear</button>
+	</form>
+	<form action="/bears/edit/<%= bear.id %>" method="get" style='display: inline-block;'>
+		<button style="margin-top: 30px;" class="btn btn-default">Edit Bear</button>
+	</form>
+	<form action="/" method="get" style='display: inline-block;'>
+		<button style="margin-top: 30px;" class="btn btn-default">Back to Dashboard</button>
+	</form>
+</body>
+</html>
